@@ -5,4 +5,6 @@
 int main()
 {
 	logic game;
+
+	std::cout << "Hello World!" << std::endl;
 }
