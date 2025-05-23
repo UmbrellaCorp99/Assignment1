@@ -1,4 +1,5 @@
 #include <string>
+
 class logic {
 public:
     logic();
@@ -11,7 +12,7 @@ public:
     bool playGame();
     //Carries out the actual word scrambling
     //Returns: true if user wins and false if not
-    string scrambler(string word);
+    std::string scrambler(std::string word);
     //Takes in a word and scrambles it
     //Returns a scrambled version of the parameter
     void end();
@@ -21,31 +22,31 @@ private:
         smallWordLength,       //length of word arrays
         mediumWordLength,
         largeWordLength;
-    string smallWords[50];   //array of words of length 4-5
-    string mediumWords[50];   //array of words of length 6-7
-    string largeWords[50];   //array of words of length 8+   
+    std::string smallWords[50];   //array of words of length 4-5
+    std::string mediumWords[50];   //array of words of length 6-7
+    std::string largeWords[50];   //array of words of length 8+   
 };//end class logic
 
 logic::logic() {
 
 }
 
-void introduction::introduction() {
+void logic::introduction() {
 
 }
 
-void createLists::createLists() {
+void logic::createLists() {
 
 }
 
-bool playGame::playGame() {
+bool logic::playGame() {
 
 }
 
-string scrambler::scrambler(string word) {
+std::string logic::scrambler(std::string word) {
 
 }
 
-void end::end() {
+void logic::end() {
 
 }
