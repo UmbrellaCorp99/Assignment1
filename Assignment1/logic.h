@@ -1,3 +1,4 @@
+#include <string>
 class logic {
 public:
     logic();
@@ -24,3 +25,27 @@ private:
     string mediumWords[50];   //array of words of length 6-7
     string largeWords[50];   //array of words of length 8+   
 };//end class logic
+
+logic::logic() {
+
+}
+
+void introduction::introduction() {
+
+}
+
+void createLists::createLists() {
+
+}
+
+bool playGame::playGame() {
+
+}
+
+string scrambler::scrambler(string word) {
+
+}
+
+void end::end() {
+
+}
