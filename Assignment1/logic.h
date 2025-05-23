@@ -35,16 +35,19 @@ void logic::introduction() {
 
 }
 
-void logic::createLists() {
-
+bool logic::createLists() {
+    bool value = true;
+    return value;
 }
 
 bool logic::playGame() {
-
+    bool value = true;
+    return value;
 }
 
 std::string logic::scrambler(std::string word) {
-
+    std::string value = "";
+    return value;
 }
 
 void logic::end() {
