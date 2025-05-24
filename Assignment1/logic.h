@@ -72,7 +72,8 @@ bool logic::createLists() {
         inputfile.close();
     }
     else {
-        std::cout << "File could not be found" << std::endl;   
+        std::cout << "File could not be found" << std::endl;
+        exit(0);
     }
     return value;
 }
