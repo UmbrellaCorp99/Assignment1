@@ -1,5 +1,6 @@
 #include <string>
 #include <fstream>
+#include <algorithm>
 
 class logic {
 public:
@@ -84,8 +85,8 @@ bool logic::playGame() {
 }
 
 std::string logic::scrambler(std::string word) {
-    std::string value = "";
-    return value;
+    random_shuffle(word.begin(), word.end());
+    return word;
 }
 
 void logic::end() {
