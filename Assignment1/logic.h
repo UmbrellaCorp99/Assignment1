@@ -32,7 +32,7 @@ logic::logic() {
 }
 
 void logic::introduction() {
-
+    std::cout << "Welcome to the unscramble game! \nIn this game, you will have to guess 5 scrambled words \nincreasing in difficulty before the 60 second timer runs out. \nLet's begin!\n" << std::endl;
 }
 
 bool logic::createLists() {

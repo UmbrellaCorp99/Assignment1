@@ -5,6 +5,7 @@
 int main()
 {
 	logic game;
+	game.introduction();
 
-	std::cout << "Hello World!" << std::endl;
+	return 0;
 }
