@@ -89,5 +89,5 @@ std::string logic::scrambler(std::string word) {
 }
 
 void logic::end() {
-
+    std::cout << "Thanks for playing!" << std::endl;
 }
