@@ -1,4 +1,5 @@
 #include <string>
+#include <fstream>
 
 class logic {
 public:
@@ -36,7 +37,43 @@ void logic::introduction() {
 }
 
 bool logic::createLists() {
-    bool value = true;
+    bool value = false;
+    std::ifstream inputfile;
+    inputfile.open("dictionary.txt");
+    if (inputfile.is_open()) {
+        std::string word;
+        while (std::getline(inputfile, word)) {
+            if (word.length() == 4 || word.length() == 5) {
+                for (int i = 0; i < smallWords->length() - 1; i++) {
+                    if (smallWords[i].empty()) {
+                        smallWords[i] = word;
+                        break;
+                    }
+                }
+            }
+            else if ((word.length() == 6 || word.length() == 7)) {
+                for (int i = 0; i < mediumWords->length() - 1; i++) {
+                    if (mediumWords[i].empty()) {
+                        mediumWords[i] = word;
+                        break;
+                    }
+                }
+            }
+            else if (word.length() >= 8) {
+                for (int i = 0; largeWords->length() - 1; i++) {
+                    if (largeWords[1].empty()) {
+                        largeWords[i] = word;
+                        break;
+                    }
+                }
+            }
+        }
+        value = true;
+        inputfile.close();
+    }
+    else {
+        std::cout << "File could not be found" << std::endl;   
+    }
     return value;
 }
 

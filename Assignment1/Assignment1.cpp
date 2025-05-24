@@ -6,6 +6,7 @@ int main()
 {
 	logic game;
 	game.introduction();
+	game.createLists();
 
 	return 0;
 }
