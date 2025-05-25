@@ -35,7 +35,7 @@ int main()
 		game.end();
 	}
 	else {
-		cout << "\n\tTime ran out!";
+		cout << "\nTime ran out!\n";
 		game.end();
 	}
 
