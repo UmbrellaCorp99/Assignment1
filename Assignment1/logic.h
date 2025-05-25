@@ -1,6 +1,7 @@
 #include <string>
 #include <fstream>
 #include <algorithm>
+#include <time.h>
 
 class logic {
 public:
@@ -48,6 +49,7 @@ bool logic::createLists() {
                 for (int i = 0; i < smallWords->length() - 1; i++) {
                     if (smallWords[i].empty()) {
                         smallWords[i] = word;
+                        smallWordLength++;
                         break;
                     }
                 }
@@ -56,6 +58,7 @@ bool logic::createLists() {
                 for (int i = 0; i < mediumWords->length() - 1; i++) {
                     if (mediumWords[i].empty()) {
                         mediumWords[i] = word;
+                        mediumWordLength++;
                         break;
                     }
                 }
@@ -64,6 +67,7 @@ bool logic::createLists() {
                 for (int i = 0; largeWords->length() - 1; i++) {
                     if (largeWords[1].empty()) {
                         largeWords[i] = word;
+                        largeWordLength++;
                         break;
                     }
                 }
@@ -82,6 +86,7 @@ bool logic::createLists() {
 bool logic::playGame() {
     bool result = false;
     std::string guess = "";
+    std::string words[50];
     while (guess != smallWords[0]) {
         std::cout << "1) " + scrambler(smallWords[0]) << std::endl;
         std::cin >> guess;
