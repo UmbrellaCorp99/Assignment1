@@ -80,8 +80,74 @@ bool logic::createLists() {
 }
 
 bool logic::playGame() {
-    bool value = true;
-    return value;
+    bool result = false;
+    int points = 0;
+    std::string guess = "";
+    while (guess != smallWords[0]) {
+        std::cout << "1) " + scrambler(smallWords[0]) << std::endl;
+        std::cin >> guess;
+        if (guess == smallWords[0]) {
+            points++;
+            continue;
+        }
+        else {
+            std::cout << "Incorrect. Try again." << std::endl;
+        }
+        guess = "";
+    }
+    while (guess != smallWords[1]) {
+        std::cout << "2) " + scrambler(smallWords[1]) << std::endl;
+        std::cin >> guess;
+        if (guess == smallWords[1]) {
+            points++;
+            continue;
+        }
+        else {
+            std::cout << "Incorrect. Try again." << std::endl;
+        }
+        guess = "";
+    }
+    while (guess != mediumWords[0]) {
+        std::cout << "3) " + scrambler(mediumWords[0]) << std::endl;
+        std::cin >> guess;
+        if (guess == mediumWords[0]) {
+            points++;
+            continue;
+        }
+        else {
+            std::cout << "Incorrect. Try again." << std::endl;
+        }
+        guess = "";
+    }
+    while (guess != mediumWords[1]) {
+        std::cout << "4) " + scrambler(mediumWords[1]) << std::endl;
+        std::cin >> guess;
+        if (guess == mediumWords[1]) {
+            points++;
+            continue;
+        }
+        else {
+            std::cout << "Incorrect. Try again." << std::endl;
+        }
+        guess = "";
+    }
+    while (guess != largeWords[0]) {
+        std::cout << "5) " + scrambler(largeWords[0]) << std::endl;
+        std::cin >> guess;
+        if (guess == largeWords[0]) {
+            points++;
+            continue;
+        }
+        else {
+            std::cout << "Incorrect. Try again." << std::endl;
+        }
+        guess = "";
+    }
+    std::cout << "All good so far!" << std::endl;
+    if (points == 5) {
+        result = true;
+    }
+    return result;
 }
 
 std::string logic::scrambler(std::string word) {

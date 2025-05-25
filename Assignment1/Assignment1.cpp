@@ -14,6 +14,7 @@ int main()
 {
 	game.introduction();
 	game.createLists();
+	game.playGame();
 	game.end();
 	return 0;
 }
