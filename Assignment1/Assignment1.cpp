@@ -14,15 +14,37 @@ int main()
 {
 	game.introduction();
 	game.createLists();
-	game.playGame();
-	game.end();
+
+	ALLEGRO_THREAD *create1 = NULL, *create2 = NULL;
+
+	create1 = al_create_thread(input, NULL);
+	create2 = al_create_thread(timer, NULL);
+
+	while (!finished && !timeOut) {
+		if (!finished && !timeOut) {
+			al_start_thread(create1);
+			al_start_thread(create2);
+		}
+		else {
+			al_destroy_thread(create1);
+			al_destroy_thread(create2);
+		}
+	}
+
+	if (finished) {
+		game.end();
+	}
+	else {
+		cout << "\n\tTime ran out!";
+		game.end();
+	}
+
 	return 0;
 }
 
 void* input(ALLEGRO_THREAD* ptr, void* arg) {
 	finished = false;
-	cout << "Asking for user input?";
-	cin >> finished;
+	game.playGame();
 	finished = true;
 	return NULL;
 }
