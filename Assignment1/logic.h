@@ -30,14 +30,23 @@ private:
     std::string largeWords[50];   //array of words of length 8+   
 };//end class logic
 
+//This is the constructor for the logic class
+//It takes no parameters
+//Returns nothing, instantiating it creates an object of type logic
 logic::logic() {
 
 }
 
+//This function prints an introduction to the player upon starting the program
+//It takes no parameters
+//It returns nothing, prints a message
 void logic::introduction() {
     std::cout << "Welcome to the unscramble game! \nIn this game, you will have to guess 5 scrambled words \nincreasing in difficulty before the 60 second timer runs out. \nLet's begin!\n" << std::endl;
 }
 
+//This function reads from a file and adds the contents to the apporopriate array of strings
+//It takes no arguments
+//Returns a boolean indicating if it was successful or not
 bool logic::createLists() {
     bool value = false;
     std::ifstream inputfile;
@@ -83,6 +92,9 @@ bool logic::createLists() {
     return value;
 }
 
+//This function picks a word, scrambles it, and asks the user to guess. If guessed correctly, the user gets a point. If not, they must guess again
+//It takes no parameters
+//Returns a boolean of false if the user does not get all five points and true if they do
 bool logic::playGame() {
     bool result = false;
     std::string guess = "";
@@ -154,11 +166,17 @@ bool logic::playGame() {
     return result;
 }
 
+//This function scrambles a word
+//It takes a string as a parameter
+//It returns a new string, which is the inputted string scrambled
 std::string logic::scrambler(std::string word) {
     random_shuffle(word.begin(), word.end());
     return word;
 }
 
+//This function takes into account the correct guesses that they user made and prints a message corresponsing to those points
+//It takes no parameters
+//It has no return, it just prints to the console
 void logic::end() {
     printf("\nScore: %i", numCorrect);
     if (numCorrect == 0) {
